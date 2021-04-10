@@ -23,7 +23,6 @@ export const tollTypeDef = `
   type DeleteResponse {
       DeletedCount: Int
   }
-  
   type GetATollResponse {
       message: String
   }

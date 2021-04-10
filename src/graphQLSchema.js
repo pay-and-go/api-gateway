@@ -10,19 +10,29 @@ import {
 	tollTypeDef
 } from './gateway/tolls/typeDefs';
 
+import {
+	vehicleMutations,
+	vehicleQueries,
+	vehicleTypeDef
+} from './gateway/vehicles/typeDefsVehicles';
+
 import tollResolvers from './gateway/tolls/resolvers';
+import vehicleResolvers from './gateway/vehicles/resolversVehicles';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		tollTypeDef
+		tollTypeDef,
+		vehicleTypeDef
 	],
 	[
-		tollQueries
+		tollQueries,
+		vehicleQueries
 	],
 	[
-		tollMutations
+		tollMutations,
+		vehicleMutations
 	]
 );
 
@@ -31,6 +41,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		tollResolvers
+		tollResolvers,
+		vehicleResolvers
 	)
 });
