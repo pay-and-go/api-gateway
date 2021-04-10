@@ -14,6 +14,20 @@ export const tollTypeDef = `
   type CreateResponse {
       InsertedID: String
   }
+  type UpdateResponse {
+      MatchedCount: Int
+      ModifiedCount: Int
+      UpsertedCount: Int
+      UpsertedID: String
+  }
+  type DeleteResponse {
+      DeletedCount: Int
+  }
+  
+  type GetATollResponse {
+      message: String
+  }
+    
   input TollInput {
       administrator: String
       coor_lat: Float!
@@ -29,11 +43,11 @@ export const tollTypeDef = `
 
 export const tollQueries = `
       allTolls: [Toll]!
-      tollById(tollId: Int!): Toll!
+      tollById(tollId: Int!): Toll
   `;
 
 export const tollMutations = `
     createToll(toll: TollInput!): CreateResponse
-    updateToll(tollId: Int!, toll: TollInput!): Int
-    deleteToll(tollId: Int!): Int
+    updateToll(tollId: Int!, toll: TollInput!): UpdateResponse
+    deleteToll(tollId: Int!): DeleteResponse
 `;
