@@ -7,9 +7,9 @@ const resolvers = {
     Query: {
         getCars: (_) =>
             generalRequest(`${URL}`+ 'getCars', 'GET'),
-        idCarbyLicense: (_, {licensecar}) =>
+        idCarbyLicense: (_, { licensecar }) =>
             generalRequest(`${URL}`+ 'getIdCarbyLicense', 'POST', licensecar),
-        carbyLicense: (_, {licensecar}) =>
+        carbyLicense: (_, { licensecar }) =>
             generalRequest(`${URL}`+ 'getCarbyLicense', 'POST', licensecar),
     },
     Mutation: {
