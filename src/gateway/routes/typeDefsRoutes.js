@@ -26,7 +26,7 @@ export const routesTypeDef = `
   }
   
   input RouteIdInput {
-    idroute: Int!
+    idroute: String!
   }`;
 
 export const routesQueries = `
