@@ -16,7 +16,7 @@ import {
 	vehicleTypeDef
 } from './gateway/vehicles/typeDefsVehicles';
 
-import {
+/*import {
 	carMutations,
 	carQueries,
 	carTypeDef
@@ -25,14 +25,15 @@ import {
 import {
 	dateMutations,
 	dateTypeDef
-} from './gateway/routes/typeDefsDate';
+} from './gateway/routes/typeDefsDate';*/
 
 import {
 	routesMutations,
 	routesQueries,
 	routesTypeDef
 } from './gateway/routes/typeDefsRoutes';
-import {
+
+/*import {
 	relCDMutations,
 	relCDQueries,
 	relCDTypeDef
@@ -42,18 +43,18 @@ import {
 	relDRMutations,
 	relDRQueries,
 	relDRTypeDef
-} from './gateway/routes/typeDefsRelDR';
+} from './gateway/routes/typeDefsRelDR';*/
 
 
 
 import tollResolvers from './gateway/tolls/resolvers';
 import vehicleResolvers from './gateway/vehicles/resolversVehicles';
 
-import nodeCarResolvers from './gateway/routes/resolversCars';
-import nodeDateResolvers from './gateway/routes/resolversDate';
+/*import nodeCarResolvers from './gateway/routes/resolversCars';
+import nodeDateResolvers from './gateway/routes/resolversDate';*/
 import nodeRouteResolvers from './gateway/routes/resolversRoutes';
-import relationCDResolvers from './gateway/routes/resolversRelCD';
-import relationDRResolvers from './gateway/routes/resolversRelDR';
+/*import relationCDResolvers from './gateway/routes/resolversRelCD';
+import relationDRResolvers from './gateway/routes/resolversRelDR';*/
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -61,28 +62,28 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		tollTypeDef,
 		vehicleTypeDef,
-		carTypeDef,
-		dateTypeDef,
+		/*carTypeDef,
+		dateTypeDef,*/
 		routesTypeDef,
-		relCDTypeDef,
-		relDRTypeDef
+		/*relCDTypeDef,
+		relDRTypeDef*/
 	],
 	[
 		tollQueries,
 		vehicleQueries,
-		carQueries,
+		//carQueries,
 		routesQueries,
-		relCDQueries,
-		relDRQueries
+		/*relCDQueries,
+		relDRQueries*/
 	],
 	[
 		tollMutations,
 		vehicleMutations,
-		carMutations,
-		dateMutations,
+		/*carMutations,
+		dateMutations,*/
 		routesMutations,
-		relCDMutations,
-		relDRMutations
+		/*relCDMutations,
+		relDRMutations*/
 	]
 );
 
@@ -93,10 +94,10 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		tollResolvers,
 		vehicleResolvers,
-		nodeCarResolvers,
-		nodeDateResolvers,
+		/*nodeCarResolvers,
+		nodeDateResolvers,*/
 		nodeRouteResolvers ,
-		relationCDResolvers,
-		relationDRResolvers
+		/*relationCDResolvers,
+		relationDRResolvers*/
 	)
 });

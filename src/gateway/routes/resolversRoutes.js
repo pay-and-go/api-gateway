@@ -1,15 +1,15 @@
 import { generalRequest } from '../../utilities';
 import { url, port } from './server';
 
-const URL = `http://${url}:${port}/api/nodeRoute/`;
+const URL = `http://${url}:${port}/api/noderoute/`;
 
 const resolvers = {
     Query: {
         allRoutes: (_) =>
             generalRequest(`${URL}`+ 'getRoutes', 'GET'),
-        routeById: (_, {routeId}) =>
+        routeById: (_, { routeId }) =>
             generalRequest(`${URL}`+ 'getRouteById', 'POST', routeId),
-        routeIdById: (_, {routeId}) =>
+        routeIdById: (_, { routeId }) =>
             generalRequest(`${URL}`+ 'getRouteIdById', 'POST', routeId),
     },
     Mutation: {

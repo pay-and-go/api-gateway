@@ -11,5 +11,5 @@ export const dateTypeDef = `
   `;
 
 export const dateMutations = `
-    createDay(car: CarInput!): NodeCarId
+    createDay(date: DateInput!): NodeDateId
 `;
