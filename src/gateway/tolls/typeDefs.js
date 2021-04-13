@@ -11,6 +11,11 @@ export const tollTypeDef = `
       tollId: Int!
       toll_phone_number: String
   }
+  type TollsInRoute {
+      route: Int!
+      tolls: [Int]
+  }
+  
   type CreateResponse {
       InsertedID: String
   }
@@ -25,6 +30,11 @@ export const tollTypeDef = `
   }
   type GetATollResponse {
       message: String
+  }
+  
+  input TollsInRouteInput {
+      route: Int!
+      tolls: [Int]
   }
     
   input TollInput {
@@ -43,10 +53,17 @@ export const tollTypeDef = `
 export const tollQueries = `
       allTolls: [Toll]!
       tollById(tollId: Int!): Toll
+      
+      allTollsInRoute: [TollsInRoute]!
+      tollsInARouteById(route: Int!): TollsInRoute
   `;
 
 export const tollMutations = `
     createToll(toll: TollInput!): CreateResponse
     updateToll(tollId: Int!, toll: TollInput!): UpdateResponse
     deleteToll(tollId: Int!): DeleteResponse
+    
+    createTollsInARoute(tollsInRoute: TollsInRouteInput!): CreateResponse
+    updateTollsInARoute(route: Int!, tollsInRoute: TollsInRouteInput!): UpdateResponse
+    deleteTollsInARoute(route: Int!): DeleteResponse
 `;

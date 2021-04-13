@@ -9,6 +9,11 @@ const resolvers = {
 			getRequest(URL, 'getAllTolls'),
 		tollById: (_, { tollId }) =>
 			generalRequest(`${URL}getToll/${tollId}`, 'GET'),
+
+		allTollsInRoute: (_) =>
+			getRequest(URL, 'getAllTollsInRoute'),
+		tollsInARouteById: (_, { route }) =>
+			generalRequest(`${URL}getTollInARoute/${route}`, 'GET'),
 	},
 	Mutation: {
 		createToll: (_, { toll }) =>
@@ -16,7 +21,14 @@ const resolvers = {
 		updateToll: (_, { tollId, toll }) =>
 			generalRequest(`${URL}updateToll/${tollId}`, 'PUT', toll),
 		deleteToll: (_, { tollId }) =>
-			generalRequest(`${URL}deleteToll/${tollId}`, 'DELETE')
+			generalRequest(`${URL}deleteToll/${tollId}`, 'DELETE'),
+
+		createTollsInARoute: (_, { tollsInRoute }) =>
+			generalRequest(`${URL}addTollsInRoute`, 'POST', tollsInRoute),
+		updateTollsInARoute: (_, { route, tollsInRoute }) =>
+			generalRequest(`${URL}updateTollsInRoute/${route}`, 'PUT', tollsInRoute),
+		deleteTollsInARoute: (_, { route }) =>
+			generalRequest(`${URL}deleteTollsInRoute/${route}`, 'DELETE')
 	}
 };
 
