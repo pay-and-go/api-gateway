@@ -1,14 +1,14 @@
 FROM node:carbon-slim
 
 # Create app directory
-WORKDIR /supermarket_api
+WORKDIR /api-gateway
 
 # Install app dependencies
-COPY package.json /supermarket_api/
+COPY package.json /api-gateway/
 RUN npm install
 
 # Bundle app source
-COPY . /supermarket_api/
+COPY . /api-gateway/
 RUN npm run prepublish
 
 CMD [ "npm", "run", "runServer" ]
