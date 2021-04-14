@@ -17,6 +17,12 @@ import {
 } from './gateway/vehicles/typeDefsVehicles';
 
 import {
+	userMutations,
+	userQueries,
+	userTypeDef
+} from './gateway/users/typeDefsUser';
+
+import {
 	carMutations,
 	carQueries,
 	carTypeDef
@@ -48,6 +54,7 @@ import {
 
 import tollResolvers from './gateway/tolls/resolvers';
 import vehicleResolvers from './gateway/vehicles/resolversVehicles';
+import userResolvers from './gateway/users/resolversUsers';
 
 import nodeCarResolvers from './gateway/routes/resolversCars';
 import nodeDateResolvers from './gateway/routes/resolversDate';
@@ -65,7 +72,8 @@ const mergedTypeDefs = mergeSchemas(
 		dateTypeDef,
 		routesTypeDef,
 		relCDTypeDef,
-		relDRTypeDef
+		relDRTypeDef,
+		userTypeDef
 	],
 	[
 		tollQueries,
@@ -73,7 +81,8 @@ const mergedTypeDefs = mergeSchemas(
 		carQueries,
 		routesQueries,
 		relCDQueries,
-		relDRQueries
+		relDRQueries,
+		userQueries
 	],
 	[
 		tollMutations,
@@ -82,7 +91,8 @@ const mergedTypeDefs = mergeSchemas(
 		dateMutations,
 		routesMutations,
 		relCDMutations,
-		relDRMutations
+		relDRMutations,
+		userMutations
 	]
 );
 
@@ -97,6 +107,7 @@ export default makeExecutableSchema({
 		nodeDateResolvers,
 		nodeRouteResolvers ,
 		relationCDResolvers,
-		relationDRResolvers
+		relationDRResolvers,
+		userResolvers
 	)
 });

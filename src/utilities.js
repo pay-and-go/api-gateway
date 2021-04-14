@@ -23,7 +23,7 @@ export async function generalRequest(url, method, body, fullResponse) {
 	}
 	console.log(parameters);
 	try {
-		console.log("lo intento...");
+		console.log("lo intento...", url);
 		return await request(parameters);
 	} catch (err) {
 		console.log("pero fallo");
