@@ -56,6 +56,12 @@ import {
 	navigationTypeDef
 } from './gateway/navigation/typeDefsNavigation';
 
+import {
+	paymentMutations,
+	paymentQueries,
+	paymentTypeDef
+} from './gateway/payment/typeDefsPayments';
+
 import tollResolvers from './gateway/tolls/resolvers';
 import vehicleResolvers from './gateway/vehicles/resolversVehicles';
 import userResolvers from './gateway/users/resolversUsers';
@@ -67,6 +73,7 @@ import relationCDResolvers from './gateway/routes/resolversRelCD';
 import relationDRResolvers from './gateway/routes/resolversRelDR';
 
 import navigationResolvers from './gateway/navigation/resolverNavigation';
+import paymentResolvers from './gateway/payment/resolversPayment';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -80,7 +87,8 @@ const mergedTypeDefs = mergeSchemas(
 		relCDTypeDef,
 		relDRTypeDef,
 		userTypeDef,
-		navigationTypeDef
+		navigationTypeDef,
+		paymentTypeDef
 	],
 	[
 		tollQueries,
@@ -89,7 +97,8 @@ const mergedTypeDefs = mergeSchemas(
 		routesQueries,
 		relCDQueries,
 		relDRQueries,
-		userQueries
+		userQueries,
+		paymentQueries
 	],
 	[
 		tollMutations,
@@ -100,7 +109,8 @@ const mergedTypeDefs = mergeSchemas(
 		relCDMutations,
 		relDRMutations,
 		userMutations,
-		navigationMutations
+		navigationMutations,
+		paymentMutations
 	]
 );
 
@@ -117,6 +127,7 @@ export default makeExecutableSchema({
 		relationCDResolvers,
 		relationDRResolvers,
 		userResolvers,
-		navigationResolvers
+		navigationResolvers,
+		paymentResolvers
 	)
 });
