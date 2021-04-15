@@ -7,14 +7,14 @@ const resolvers = {
 	Query: {
 		allPayments: (_) =>
             generalRequest(`${URL}getPayments`, 'GET'),
-        paymentById: (_, { paymentId }) =>
-			generalRequest(`${URL}paymentById/${paymentId}`, 'GET'),
+        paymentById: (_, { idPago }) =>
+			generalRequest(`${URL}paymentById/${idPago}`, 'GET'),
 	},
 	Mutation: {
 		createPayment: (_, { payment }) =>
 			generalRequest(`${URL}createPayment`, 'POST', payment),
-		updateToll: (_, { paymentId, payment }) =>
-			generalRequest(`${URL}updatePayment/${paymentId}`, 'PUT', payment),
+		updatePayment: (_, { idPago, payment }) =>
+			generalRequest(`${URL}updatePayment/${idPago}`, 'PUT', payment),
 	}
 };
 

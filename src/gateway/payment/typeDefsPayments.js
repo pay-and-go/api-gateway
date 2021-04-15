@@ -25,6 +25,6 @@ export const paymentQueries = `
   `;
 
 export const paymentMutations = `
-    createPayment(payment: PaymentInput!): String
-    updateVehicle(idPago: Int!, payment: PaymentInput!): Payment
+    createPayment(payment: PaymentInput!): Payment
+    updatePayment(idPago: Int!, payment: PaymentInput!): Payment
 `;
