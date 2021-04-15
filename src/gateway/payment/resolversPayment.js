@@ -1,5 +1,5 @@
 import { generalRequest, getRequest } from '../../utilities';
-import { url, port } from './server';
+import { url, port } from './serverPayments';
 
 const URL = `http://${url}:${port}/ms_pago/`;
 

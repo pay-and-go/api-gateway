@@ -1,20 +1,20 @@
 export const paymentTypeDef = `
   type Payment {
       idPago: Int!
-      fechaPago: Date!
-      horaPago: Time!
+      fechaPago: String!
+      horaPago: String!
       placa: String!
       peaje: Int!
-      valor: Double!
+      valor: Float!
       created_at: String!
       updated_at: String!
   }
   input PaymentInput {
-    fechaPago: Date!
-    horaPago: Time!
+    fechaPago: String!
+    horaPago: String!
     placa: String!
     peaje: Int!
-    valor: Double!
+    valor: Float!
     created_at: String!
     updated_at: String!
   }`;
@@ -25,6 +25,6 @@ export const paymentQueries = `
   `;
 
 export const paymentMutations = `
-    createPayment(payment: paymentInput!): String
-    updateVehicle(idPago: Int!, payment: paymentInput!): Payment
+    createPayment(payment: PaymentInput!): String
+    updateVehicle(idPago: Int!, payment: PaymentInput!): Payment
 `;
