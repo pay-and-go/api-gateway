@@ -13,7 +13,6 @@ export const userTypeDef = `
     first_name: String!
     last_name: String!
     cedula: Int!
-    tipo: Int!
     mail: String!
     password: String!
   }`;
@@ -23,7 +22,7 @@ export const userQueries = `
   `;
 
 export const userMutations = `
-    createUser(user: UserInput!): String
-    updateUser(id: Int!, user: UserInput!): String
+    createUser(user: UserInput!): User
+    updateUser(id: Int!, user: UserInput!): User
     deleteUser(id: Int!): String
 `;
