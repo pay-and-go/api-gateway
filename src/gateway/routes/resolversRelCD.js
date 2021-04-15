@@ -5,11 +5,11 @@ const URL = `http://${url}:${port}/api/relationcardate/`;
 
 const resolvers = {
     Query: {
-        relationByDate: (_, {licensedate}) =>
+        relationByDate: (_, { licensedate }) =>
             generalRequest(`${URL}`+ 'getRelationByDate', 'POST', licensedate),
-        routeById: (_, {routeId}) =>
-            generalRequest(`${URL}`+ 'getIdRelationCarDate', 'POST', routeId),
-        routeIdById: (_, {id}) =>
+        idRelationCarDate: (_, { datecar }) =>
+            generalRequest(`${URL}`+ 'getIdRelationCarDate', 'POST', datecar),
+        idDatebyIdRelation: (_, { id }) =>
             generalRequest(`${URL}`+ `getRouteIdById/${id}`, 'GET'),
     },
     Mutation: {

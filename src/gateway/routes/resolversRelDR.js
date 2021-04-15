@@ -5,7 +5,7 @@ const URL = `http://${url}:${port}/api/relationdateroute/`;
 
 const resolvers = {
     Query: {
-        searchRelationDayRoute: (_, {dateroute}) =>
+        searchRelationDayRoute: (_, { dateroute }) =>
             generalRequest(`${URL}`+ 'getRelationByDate', 'POST', dateroute),
     },
     Mutation: {
