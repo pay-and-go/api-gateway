@@ -17,6 +17,9 @@ import {
 } from './gateway/vehicles/typeDefsVehicles';
 
 import {
+	logMutations,
+	logQueries,
+	logTypeDef,
 	userMutations,
 	userQueries,
 	userTypeDef
@@ -87,6 +90,7 @@ const mergedTypeDefs = mergeSchemas(
 		relCDTypeDef,
 		relDRTypeDef,
 		userTypeDef,
+		logTypeDef,
 		navigationTypeDef,
 		paymentTypeDef
 	],
@@ -98,6 +102,7 @@ const mergedTypeDefs = mergeSchemas(
 		relCDQueries,
 		relDRQueries,
 		userQueries,
+		logQueries,
 		paymentQueries
 	],
 	[
@@ -109,6 +114,7 @@ const mergedTypeDefs = mergeSchemas(
 		relCDMutations,
 		relDRMutations,
 		userMutations,
+		logMutations,
 		navigationMutations,
 		paymentMutations
 	]

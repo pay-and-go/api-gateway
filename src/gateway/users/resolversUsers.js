@@ -6,7 +6,9 @@ const URL = `http://${url}:${port}`;
 const resolvers = {
     Query: {
         allUsers: (_) =>
-			getRequest(URL, 'user')
+			getRequest(URL, 'user'),
+        allLogs: (_) =>
+			getRequest(URL, 'log')
     },
     Mutation: {
         createUser: (_, { user }) =>
@@ -14,7 +16,9 @@ const resolvers = {
         updateUser: (_, { id, user }) =>
             generalRequest(`${URL}/user/${id}`, 'PUT', user),
         deleteUser: (_, { id }) =>
-            generalRequest(`${URL}/user/${id}`, 'DELETE')
+            generalRequest(`${URL}/user/${id}`, 'DELETE'),
+        createLog: (_, { log }) =>
+            generalRequest(`${URL}/log/`, 'POST', log),
     }
 };
 

@@ -26,3 +26,23 @@ export const userMutations = `
     updateUser(id: Int!, user: UserInput!): User
     deleteUser(id: Int!): String
 `;
+
+export const logTypeDef = `
+  type Log {
+    id_user: Int!
+    timestamp: String!
+    operation: String!
+  }
+      
+  input LogInput {
+    id_user: Int!
+    operation: String!
+  }`;
+
+export const logQueries = `
+      allLogs: [Log]!
+  `;
+
+export const logMutations = `
+    createLog(log: LogInput!): Log
+`;
