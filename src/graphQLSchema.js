@@ -51,7 +51,10 @@ import {
 	relDRTypeDef
 } from './gateway/routes/typeDefsRelDR';
 
-
+import {
+	navigationMutations,
+	navigationTypeDef
+} from './gateway/navigation/typeDefsNavigation';
 
 import tollResolvers from './gateway/tolls/resolvers';
 import vehicleResolvers from './gateway/vehicles/resolversVehicles';
@@ -62,6 +65,8 @@ import nodeDateResolvers from './gateway/routes/resolversDate';
 import nodeRouteResolvers from './gateway/routes/resolversRoutes';
 import relationCDResolvers from './gateway/routes/resolversRelCD';
 import relationDRResolvers from './gateway/routes/resolversRelDR';
+
+import navigationResolvers from './gateway/navigation/resolverNavigation';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -74,7 +79,8 @@ const mergedTypeDefs = mergeSchemas(
 		routesTypeDef,
 		relCDTypeDef,
 		relDRTypeDef,
-		userTypeDef
+		userTypeDef,
+		navigationTypeDef
 	],
 	[
 		tollQueries,
@@ -93,7 +99,8 @@ const mergedTypeDefs = mergeSchemas(
 		routesMutations,
 		relCDMutations,
 		relDRMutations,
-		userMutations
+		userMutations,
+		navigationMutations
 	]
 );
 
@@ -109,6 +116,7 @@ export default makeExecutableSchema({
 		nodeRouteResolvers ,
 		relationCDResolvers,
 		relationDRResolvers,
-		userResolvers
+		userResolvers,
+		navigationResolvers
 	)
 });
