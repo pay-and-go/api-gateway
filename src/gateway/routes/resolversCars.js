@@ -14,7 +14,7 @@ const resolvers = {
     },
     Mutation: {
         createCar: (_, { car }) =>
-            generalRequest(`${URL}`+ 'createRoute', 'POST', car),
+            generalRequest(`${URL}`+ 'createCar', 'POST', car),
         modifyCar: (_, { car }) =>
             generalRequest(`${URL}`+ 'modifyCar', 'PUT', car),
         deleteCar: (_, { licensecar }) =>
