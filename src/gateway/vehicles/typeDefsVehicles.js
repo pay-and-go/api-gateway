@@ -20,6 +20,8 @@ export const vehicleTypeDef = `
 
 export const vehicleQueries = `
       vehicleById(id: Int!): [Vehicle]
+      vehicleByIdUser(iduser: Int!): [Vehicle]
+      vehicleByLicense(placa: string!): [Vehicle]
   `;
 
 export const vehicleMutations = `

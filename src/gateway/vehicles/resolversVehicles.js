@@ -7,6 +7,10 @@ const resolvers = {
     Query: {
         vehicleById: (_, { id }) =>
             generalRequest(`${URL}`, 'GET',{"id": id}),
+        vehicleByIdUser: (_, { iduser }) =>
+            generalRequest(`${URL}`, 'GET',{"iduser": iduser}),
+        vehicleByLicense: (_, { placa }) =>
+            generalRequest(`${URL}`, 'GET',{"placa": placa}),        
     },
     Mutation: {
         createVehicle: (_, { vehicle }) =>
