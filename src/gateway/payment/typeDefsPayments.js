@@ -22,6 +22,7 @@ export const paymentTypeDef = `
 export const paymentQueries = `
       allPayments: [Payment]!
       paymentById(idPago: Int!): Payment
+      paymentsByPlaca(placa: String): [Payment]
   `;
 
 export const paymentMutations = `
