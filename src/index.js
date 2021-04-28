@@ -9,6 +9,8 @@ import graphQLSchema from './graphQLSchema';
 
 import { formatErr } from './utilities';
 
+import koaPlayground from 'graphql-playground-middleware-koa';
+
 const app = new Koa();
 const router = new KoaRouter();
 const PORT = process.env.PORT || 5000;
@@ -35,6 +37,8 @@ const graphql = graphqlKoa((ctx) => ({
 }));
 router.post('/graphql', koaBody(), graphql);
 router.get('/graphql', graphql);
+
+router.all('/playground', koaPlayground({ endpoint: '/graphql' }))
 
 // test route
 router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
