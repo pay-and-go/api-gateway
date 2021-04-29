@@ -21,7 +21,7 @@ export const vehicleTypeDef = `
 export const vehicleQueries = `
       vehicleById(id: Int!): [Vehicle]
       vehicleByIdUser(iduser: Int!): [Vehicle]
-      vehicleByLicense(placa: string!): [Vehicle]
+      vehicleByLicense(placa: String!): [Vehicle]
   `;
 
 export const vehicleMutations = `
