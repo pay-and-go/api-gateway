@@ -10,9 +10,9 @@ const resolvers = {
     },
     Mutation: {
         createRelationDayRoute: (_, { dateroute }) =>
-            generalRequest(`${URL}`+ 'createRelationCarDay', 'POST', dateroute),
+            generalRequest(`${URL}`+ 'createRelationDayRoute', 'POST', dateroute),
         deleteRelationDayRoute: (_, { dateroute }) =>
-            generalRequest(`${URL}`+ 'deleteRelationCarDay', 'DELETE', dateroute),
+            generalRequest(`${URL}`+ 'deleteRelationDayRoute', 'DELETE', dateroute),
         
     }
 };
