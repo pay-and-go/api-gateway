@@ -10,7 +10,7 @@ const resolvers = {
         routeById: (_, { routeId }) =>
             generalRequest(`${URL}`+ 'getRouteById', 'POST', routeId),
         routeIdById: (_, { routeId }) =>
-            generalRequest(`${URL}`+ 'getRouteIdById', 'POST', routeId),
+            generalRequest(`${URL}`+ 'getRouteIdById', 'GET', routeId),
     },
     Mutation: {
         createRoute: (_, { route }) =>
