@@ -5,10 +5,12 @@ const URL = `http://${url}:${port}/ms_pago/`;
 
 const resolvers = {
 	Query: {
-		allPayments: (_) =>
+	allPayments: (_) =>
             generalRequest(`${URL}getPayments`, 'GET'),
         paymentById: (_, { idPago }) =>
-			generalRequest(`${URL}paymentById/${idPago}`, 'GET'),
+		generalRequest(`${URL}paymentById/${idPago}`, 'GET'),
+	paymentsByPlaca: (_, { placa }) =>
+		generalRequest(`${URL}paymentsByPlaca/${placa}`, 'GET'),
 	},
 	Mutation: {
 		createPayment: (_, { payment }) =>
