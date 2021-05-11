@@ -56,6 +56,7 @@ export const tollQueries = `
       
       allTollsInRoute: [TollsInRoute]!
       tollsInARouteById(route: String!): TollsInRoute
+      tollsInARouteByIdComplete(route: String!): [Toll]
   `;
 
 export const tollMutations = `
