@@ -1,7 +1,7 @@
 import { generalRequest} from '../../utilities';
 import { url, port } from './server';
 
-const URL = `http://${url}:${port}/api/nodeCar/`;
+const URL = `http://${url}/nodeCar/`;
 
 const resolvers = {
     Query: {

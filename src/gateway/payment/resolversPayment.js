@@ -1,7 +1,7 @@
 import { generalRequest, getRequest } from '../../utilities';
 import { url, port } from './serverPayments';
 
-const URL = `http://${url}:${port}/ms_pago/`;
+const URL = `http://${url}/`;
 
 const resolvers = {
 	Query: {

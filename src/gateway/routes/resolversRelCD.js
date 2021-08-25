@@ -1,7 +1,7 @@
 import { generalRequest } from '../../utilities';
 import { url, port } from './server';
 
-const URL = `http://${url}:${port}/api/relationcardate/`;
+const URL = `http://${url}/relationcardate/`;
 //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const resolvers = {

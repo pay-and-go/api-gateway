@@ -1,2 +1,2 @@
-export const url = '100.26.231.189'
+export const url = 'microservices.payandgo.44.197.253.66.nip.io/vehicle-ms'
 export const port = '3000'

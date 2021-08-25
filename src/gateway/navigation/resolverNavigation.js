@@ -2,7 +2,7 @@ import { generalRequest } from '../../utilities';
 import { url, port } from './serverNavigation';
 import tollResolver from '../tolls/resolvers'
 
-const URL = `http://${url}:${port}/`;
+const URL = `http://${url}/`;
 
 const resolvers = {
     Mutation: {

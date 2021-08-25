@@ -1,7 +1,7 @@
 import { generalRequest } from '../../utilities';
 import { url, port } from './server';
 
-const URL = `http://${url}:${port}/api/nodeday/`;
+const URL = `http://${url}/nodeday/`;
 
 const resolvers = {
     Mutation: {

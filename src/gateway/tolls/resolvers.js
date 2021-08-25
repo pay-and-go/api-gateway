@@ -1,7 +1,7 @@
 import {generalRequest, getRequest} from '../../utilities';
 import {url, port} from './server';
 
-const URL = `http://${url}:${port}/`;
+const URL = `http://${url}/`;
 
 const resolvers = {
     Query: {

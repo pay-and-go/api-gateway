@@ -1,4 +1,4 @@
-export const url = '54.144.189.129'
+export const url = 'microservices.payandgo.44.197.253.66.nip.io/route-ms'
 export const port = '4000'
 /*
 export const url = 'localhost'
