@@ -5,18 +5,21 @@ const URL = `http://${url}`;
 
 const resolvers = {
     Query: {
-        allUsers: (_) =>
-			getRequest(URL, 'user'),
         allLogs: (_) =>
-			getRequest(URL, 'log')
+            getRequest(URL, 'log'),
+        getUser: (_, { username, token }) =>
+            generalRequest(`${URL}/detail/${username}`, 'GET', {},{"Authorization": `Token ${token}`}),
     },
     Mutation: {
         createUser: (_, { user }) =>
-            generalRequest(`${URL}/user/`, 'POST', user),
-        updateUser: (_, { id, user }) =>
-            generalRequest(`${URL}/user/${id}`, 'PUT', user),
-        deleteUser: (_, { id }) =>
-            generalRequest(`${URL}/user/${id}`, 'DELETE'),
+            generalRequest(`${URL}/register/`, 'POST', user),
+        login: (_, { username, password }) =>
+            generalRequest(`${URL}/login/`, 'POST', {"username": username,"password": password}),
+
+        updateUser: (_, { username, user, token }) =>
+            generalRequest(`${URL}/update/${username}`, 'PUT', user, {"Authorization": `Token ${token}`}),
+        deleteUser: (_, { username, token }) =>
+            generalRequest(`${URL}/delete/${username}`, 'DELETE', {},{"Authorization": `Token ${token}`}),
         createLog: (_, { log }) =>
             generalRequest(`${URL}/log/`, 'POST', log),
     }

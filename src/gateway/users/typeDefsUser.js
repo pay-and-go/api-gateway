@@ -1,6 +1,6 @@
 export const userTypeDef = `
   type User {
-    id: Int!
+    id: Int
     first_name: String!
     last_name: String!
     cedula: Int!
@@ -8,23 +8,61 @@ export const userTypeDef = `
     mail: String!
     password: String!
   }
+  
+  type Token {
+    token: String!
+  }
+  
+  type Response {
+    success: String!
+  }
+  
+  type UserCreatedOk {
+    response: String!
+    email: String!
+    username: String!
+    token: String!
+  }
+
+  type UserGet {
+    id: Int!
+    first_name: String!
+    last_name: String!
+    cedula: Int!
+    tipo: Int!
+    mail: String!
+  }
       
   input UserInput {
     first_name: String!
     last_name: String!
+    username: String!
     cedula: Int!
     mail: String!
     password: String!
-  }`;
-
-export const userQueries = `
-      allUsers: [User]!
+    password2: String!
+  }
+  
+  input UserInputUpdate {
+    first_name: String!
+    last_name: String!
+    username: String!
+    cedula: Int!
+    mail: String!
+  }
   `;
 
+export const userQueries = `
+    getUser(username: String!, token: String!): UserGet
+`;
+
 export const userMutations = `
-    createUser(user: UserInput!): User
-    updateUser(id: Int!, user: UserInput!): User
-    deleteUser(id: Int!): String
+
+    createUser(user: UserInput!): UserCreatedOk
+    login(username: String!, password: String!): Token
+    
+    updateUser(username: String!, user: UserInputUpdate!, token: String!): Response
+    deleteUser(username: String!, token: String!): Response
 `;
 
 export const logTypeDef = `
